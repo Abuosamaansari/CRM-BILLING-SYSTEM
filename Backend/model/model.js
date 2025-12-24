@@ -12,28 +12,51 @@ exports.insertVendor = (vendorData) => {
         date_of_registration
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
+    // const values = [
+    //   vendorData.vendorename,
+    //   vendorData.pan_number,
+    //   vendorData.landline,
+    //   vendorData.contact_person_name,
+    //   vendorData.contact_person_number,
+    //   vendorData.description,
+    //   vendorData.email,
+    //   vendorData.phone_number,
+    //   vendorData.website,
+    //   vendorData.business_type,
+    //   vendorData.bank_name,
+    //   vendorData.bank_account_number,
+    //   vendorData.bank_ifsc,
+    //   vendorData.address.line1,
+    //   vendorData.address.line2,
+    //   vendorData.address.city,
+    //   vendorData.address.state,
+    //   vendorData.address.postal_code,
+    //   vendorData.address.country,
+    //   vendorData.date_of_registration,
+    // ];
+
     const values = [
-      vendorData.vendorename,
-      vendorData.pan_number,
-      vendorData.landline,
-      vendorData.contact_person_name,
-      vendorData.contact_person_number,
-      vendorData.description,
-      vendorData.email,
-      vendorData.phone_number,
-      vendorData.website,
-      vendorData.business_type,
-      vendorData.bank_name,
-      vendorData.bank_account_number,
-      vendorData.bank_ifsc,
-      vendorData.address.line1,
-      vendorData.address.line2,
-      vendorData.address.city,
-      vendorData.address.state,
-      vendorData.address.postal_code,
-      vendorData.address.country,
-      vendorData.date_of_registration,
-    ];
+  vendorData.vendorename,
+  vendorData.pan_number,
+  vendorData.landline,
+  vendorData.contact_person_name,
+  vendorData.contact_person_number,
+  vendorData.description,
+  vendorData.email,
+  vendorData.phone_number,
+  vendorData.website,
+  vendorData.business_type,
+  vendorData.bank_name,
+  vendorData.bank_account_number,
+  vendorData.bank_ifsc,
+  vendorData.address_line1,   // <-- change here
+  vendorData.address_line2,   // <-- change here
+  vendorData.city,
+  vendorData.state,
+  vendorData.postal_code,
+  vendorData.country,
+  vendorData.date_of_registration,
+];
 
     database.query(query, values, (err, result) => {
       if (err) return reject(err);
